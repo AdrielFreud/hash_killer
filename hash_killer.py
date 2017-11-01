@@ -44,7 +44,7 @@ def fatal(msg):
 
 def hash_killer(hash, type_hash, wordlist):
 	print(menu)
-	print("[==>] Trying Crack HASH!\nWaiting...\n")
+	print("[==>] Trying to Break HASH!\nWaiting...\n")
 
 	with open(wordlist, 'r') as read:
 		line = read.readlines()
@@ -56,57 +56,57 @@ def hash_killer(hash, type_hash, wordlist):
 					print("[=>] Real Hash -> %s\n"%encrypt)
 					sys.exit(0)
 
-			fatal("Impossivel Creackear Hash, Tente novamente com Outra Wordlist!")
+			fatal("Impossivel Quebrar Hash, Tente novamente com Outra Wordlist!")
 
 		elif 'sha1' in type_hash.lower():
 			for lines in line:
 				encrypt = hashlib.sha1(lines.strip()).hexdigest()
 				if encrypt == hash:
-					print("[=>] Hash Cracked -> %s"%lines)
+					print("[=>] Hash Quebrada -> %s"%lines)
 					print("[=>] Real Hash -> %s\n"%encrypt)
 					sys.exit(0)
 
-			fatal("Impossivel Creackear Hash, Tente novamente com Outra Wordlist!")
+			fatal("Impossivel Quebrar Hash, Tente novamente com Outra Wordlist!")
 
 		elif 'sha224' in type_hash.lower():
 			for lines in line:
 				encrypt = hashlib.sha224(lines.strip()).hexdigest()
 				if encrypt == hash:
-					print("[=>] Hash Cracked -> %s"%lines)
+					print("[=>] Hash Quebrada -> %s"%lines)
 					print("[=>] Real Hash -> %s\n"%encrypt)
 					sys.exit(0)
 
-			fatal("Impossivel Creackear Hash, Tente novamente com Outra Wordlist!")
+			fatal("Impossivel Quebrar Hash, Tente novamente com Outra Wordlist!")
 
 		elif 'sha256' in type_hash.lower():
 			for lines in line:
 				encrypt = hashlib.sha256(lines.strip()).hexdigest()
 				if encrypt == hash:
-					print("[=>] Hash Cracked -> %s"%lines)
+					print("[=>] Hash Quebrada -> %s"%lines)
 					print("[=>] Real Hash -> %s\n"%encrypt)
 					sys.exit(0)
 
-			fatal("Impossivel Creackear Hash, Tente novamente com Outra Wordlist!")
+			fatal("Impossivel Quebrar Hash, Tente novamente com Outra Wordlist!")
 
 		elif 'sha384' in type_hash.lower():
 			for lines in line:
 				encrypt = hashlib.sha384(lines.strip()).hexdigest()
 				if encrypt == hash:
-					print("[=>] Hash Cracked -> %s"%lines)
+					print("[=>] Hash Quebrada -> %s"%lines)
 					print("[=>] Real Hash -> %s\n"%encrypt)
 					sys.exit(0)
 
-			fatal("Impossivel Creackear Hash, Tente novamente com Outra Wordlist!")
+			fatal("Impossivel Quebrar Hash, Tente novamente com Outra Wordlist!")
 
 		elif 'sha512' in type_hash.lower():
 			for lines in line:
 				encrypt = hashlib.sha512(lines.strip()).hexdigest()
 				if encrypt == hash:
-					print("[=>] Hash Cracked -> %s"%lines)
+					print("[=>] Hash Quebrada -> %s"%lines)
 					print("[=>] Real Hash -> %s\n"%encrypt)
 					sys.exit(0)
 
-			fatal("Impossivel Creackear Hash, Tente novamente com Outra Wordlist!")
+			fatal("Impossivel Quebrar Hash, Tente novamente com Outra Wordlist!")
 
 		else:
 			fatal("Nenhuma das Opcoes e valida! Tente Novamente...")
@@ -119,13 +119,13 @@ else:
 	type_hash = sys.argv[1]
 	hash = sys.argv[2]
 	if 'base64' in type_hash.lower():
-		print(menu+'\n[==>] Trying Crack HASH!\nWaiting...\n')
+		print(menu+'\n[==>] Trying to break HASH!\nWaiting...\n')
 		hash_decrypted = base64.b64decode(hash)
-		print("[=>] Hash Cracked -> %s"%hash_decrypted)
+		print("[=>] Hash Quebrada -> %s"%hash_decrypted)
 		print("[=>] Real Hash -> %s\n"%hash)
 	else:
 		if sys.argv[3]:
 			wordlist = sys.argv[3]
 			hash_killer(hash, type_hash, wordlist)
 
-		print(menu+'\n[+] Passe uma wordlist como ultimo paramtro!')
+		print(menu+'\n[+] Passe uma wordlist como ultimo parametro!')
