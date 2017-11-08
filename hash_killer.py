@@ -31,16 +31,17 @@ menu = """
 menu_type = """
 Modo de Uso: hash_killer.py MD5 "hashmd5" wordlist.txt
 
-[ 1 ] Binary - \tHanld Double
-[ 2 ] hexadecimal - \tHand double
-[ 3 ] BASE64 - \tHand double
+[ 1 ] Morse - \t Hand Double
+[ 2 ] Binary - \tHand Double
+[ 3 ] hexadecimal - \tHand Double
+[ 4 ] BASE64 - \tHand Double
 
-[ 4 ] MD5 - \t128 BITS
-[ 5 ] SHA1 - \t160 BITS
-[ 6 ] SHA224 - \t224 BITS
-[ 7 ] SHA256 - \t256 BITS
-[ 8 ] SHA384 - \t384 BITS
-[ 9 ] SHA512 - \t512 BITS
+[ 5 ] MD5 - \t128 BITS
+[ 6 ] SHA1 - \t160 BITS
+[ 7 ] SHA224 - \t224 BITS
+[ 8 ] SHA256 - \t256 BITS
+[ 9 ] SHA384 - \t384 BITS
+[ 10 ] SHA512 - \t512 BITS
 """
 morseAlphabet = {
     "A": ".-",
