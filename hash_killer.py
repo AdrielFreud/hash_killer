@@ -33,40 +33,39 @@ def hash_killer(_hash, type_hash, wordlist):
 if len(sys.argv) < 3:
 	if "identificar" in sys.argv[1]:
 		identify.run()
-
-	elif "--identificar" in sys.argv[1]:
-		identify.run()
-
 	else:
 		print(main.two_menu())
 		crypt.fatal("Passe Parametros Suficientes!")
-	sys.exit(0)
 
 else:
 	type_hash = sys.argv[1].lower()
 	_hash = sys.argv[2]
 
-	if 'base64' in type_hash:
-		print(main.stack_menu()+'\n%s[==>] Trying to break HASH!\nWaiting...\n'%t)
-		crypt.base64decode(_hash)
-		
-	elif 'binary' in type_hash:
-		print(main.stack_menu()+'\n%s[==>] Trying to break HASH!\nWaiting...\n'%t)
-		crypt.binary(_hash)
+	if _hash:
+		if 'base64' in type_hash:
+			print(main.stack_menu()+'\n%s[==>] Trying to break HASH!\nWaiting...\n'%t)
+			crypt.base64decode(_hash)
+			
+		elif 'binary' in type_hash:
+			print(main.stack_menu()+'\n%s[==>] Trying to break HASH!\nWaiting...\n'%t)
+			crypt.binary(_hash)
 
-	elif 'hex' in type_hash:
-		print(main.stack_menu()+'\n%s[==>] Trying to break HASH!\nWaiting...\n'%t)
-		crypt.hex(_hash)
+		elif 'hex' in type_hash:
+			print(main.stack_menu()+'\n%s[==>] Trying to break HASH!\nWaiting...\n'%t)
+			crypt.hex(_hash)
 
-	elif 'morse' in type_hash:
-		print(main.stack_menu()+'\n%s[==>] Trying to break HASH!\nWaiting...\n'%t)
-		crypt.morse(_hash)
+		elif 'morse' in type_hash:
+			print(main.stack_menu()+'\n%s[==>] Trying to break HASH!\nWaiting...\n'%t)
+			crypt.morse(_hash)
 
-	else:
-		if sys.argv[3]:
-			wordlist = sys.argv[3]
-			hash_killer(_hash, type_hash, wordlist)
 		else:
-			crypt.fatal("Passe uma Wordlist como Parametro Final! :)")
+			if sys.argv[3]:
+				wordlist = sys.argv[3]
+				hash_killer(_hash, type_hash, wordlist)
+			else:
+				crypt.fatal("Passe uma Wordlist como Parametro Final! :)")
+	else:
+		print(main.two_menu())
+		crypt.fatal("Passe Parametros Suficientes!")
 
 
