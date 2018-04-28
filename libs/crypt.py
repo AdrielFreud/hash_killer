@@ -79,7 +79,7 @@ def decodeMorse(message):
             decodeMessage += '<CNF>'
     return decodeMessage
 
-def base64(hash):
+def base64decode(hash):
 	sleep(1)
 	real_hash = hash.strip()
 	hash_decrypted = base64.b64decode(real_hash)

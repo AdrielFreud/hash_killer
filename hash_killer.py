@@ -11,6 +11,7 @@ import sys
 sys.path.append('libs')
 import main
 import crypt
+import identify
 import requests
 import time, datetime
 
@@ -29,17 +30,25 @@ def hash_killer(_hash, type_hash, wordlist):
 	print("%s[==>] Trying to Break HASH!\nWaiting...\n"%t)
 	main.head(wordlist, type_hash, _hash)
 
-if len(sys.argv) < 2:
-	print(main.two_menu())
-	crypt.fatal("Passe Parametros Suficientes!")
-else:
+if len(sys.argv) < 3:
+	if "identificar" in sys.argv[1]:
+		identify.run()
 
+	elif "--identificar" in sys.argv[1]:
+		identify.run()
+
+	else:
+		print(main.two_menu())
+		crypt.fatal("Passe Parametros Suficientes!")
+	sys.exit(0)
+
+else:
 	type_hash = sys.argv[1].lower()
 	_hash = sys.argv[2]
 
 	if 'base64' in type_hash:
 		print(main.stack_menu()+'\n%s[==>] Trying to break HASH!\nWaiting...\n'%t)
-		crypt.base64(_hash)
+		crypt.base64decode(_hash)
 		
 	elif 'binary' in type_hash:
 		print(main.stack_menu()+'\n%s[==>] Trying to break HASH!\nWaiting...\n'%t)
