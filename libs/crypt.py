@@ -145,7 +145,7 @@ def SHA256(hash, line):
 
 	fatal("Impossivel Quebrar Hash, Tente novamente com Outra Wordlist!")
 
-def SHA358(hash, line):
+def SHA384(hash, line):
 	for lines in line:
 		encrypt = hashlib.sha384(lines.strip()).hexdigest()
 		if encrypt == hash:

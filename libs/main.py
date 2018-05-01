@@ -43,36 +43,33 @@ def two_menu():
 	return menu+menu_type
 
 def head(wordlist, type_hash, _hash):
-	if wordlist:
+	try:
 		with open(wordlist, 'r') as read:
 			line = read.readlines()
-
-			if 'md5' in type_hash.lower():
-				crypt.MD5(_hash, line)
-				sys.exit(0)
-
-			elif 'sha1' in type_hash.lower():
-					crypt.SHA1(_hash, line)
-					sys.exit(0)
-
-			elif 'sha224' in type_hash.lower():
-					crypt.SHA224(_hash, line)
-					sys.exit(0)
-
-			elif 'sha256' in type_hash.lower():
-					crypt.SHA256(_hash, line)
-					sys.exit(0)
-
-			elif 'sha384' in type_hash.lower():
-					crypt.SHA384(_hash, line)
-					sys.exit(0)
-
-			elif 'sha512' in type_hash.lower():
-					crypt.SHA512(_hash, line)
-					sys.exit(0)
-			else:
-				crypt.fatal("Nenhuma das Opcoes e valida! Tente Novamente...")
-	else:
+	except:
+		print(stack_menu())
 		crypt.fatal("Caso o Programa nao Prosseguir reveja os Parametros passados e tente Novamente :)")
 
-	sys.exi()
+	if 'md5' in type_hash.lower():
+		crypt.MD5(_hash, line)
+
+	elif 'sha1' in type_hash.lower():
+		crypt.SHA1(_hash, line)
+
+	elif 'sha224' in type_hash.lower():
+		crypt.SHA224(_hash, line)
+
+	elif 'sha256' in type_hash.lower():
+		crypt.SHA256(_hash, line)
+
+	elif 'sha384' in type_hash.lower():
+		crypt.SHA384(_hash, line)
+
+	elif 'sha512' in type_hash.lower():
+		crypt.SHA512(_hash, line)
+
+	else:
+		print(stack_menu())
+		crypt.fatal("Nenhuma das Opcoes e valida! Tente Novamente...")
+
+	sys.exit(0)
