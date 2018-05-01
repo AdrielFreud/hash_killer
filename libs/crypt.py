@@ -164,3 +164,13 @@ def SHA512(hash, line):
 			sys.exit(0)
 
 	fatal("Impossivel Quebrar Hash, Tente novamente com Outra Wordlist!")
+
+def RIPEMD160(hash, line):
+	for lines in line:
+		encrypt = hashlib.new('ripemd160', lines.strip()).hexdigest()
+		if encrypt == hash:
+			print("%s[=>] Hash Quebrada -> %s"%(t, lines))
+			print("[=>] Real Hash -> %s\n"%encrypt)
+			sys.exit(0)
+
+	fatal("Impossivel Quebrar Hash, Tente novamente com Outra Wordlist!")
