@@ -43,7 +43,7 @@ def two_menu():
 	return menu+menu_type
 
 def head(wordlist, type_hash, _hash):
-	try:
+	if wordlist:
 		with open(wordlist, 'r') as read:
 			line = read.readlines()
 
@@ -72,5 +72,7 @@ def head(wordlist, type_hash, _hash):
 					sys.exit(0)
 			else:
 				crypt.fatal("Nenhuma das Opcoes e valida! Tente Novamente...")
-	except:
+	else:
 		crypt.fatal("Caso o Programa nao Prosseguir reveja os Parametros passados e tente Novamente :)")
+
+	sys.exi()
