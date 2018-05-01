@@ -31,7 +31,11 @@ def hash_killer(_hash, type_hash, wordlist):
 	main.head(wordlist, type_hash, _hash)
 
 if len(sys.argv) < 3:
-	if "identificar" in sys.argv[1]:
+	if len(sys.argv) < 2:
+		print(main.two_menu())
+		crypt.fatal("Passe Parametros Suficientes!")
+		
+	elif r"identificar" in sys.argv[1]:
 		identify.run()
 	else:
 		print(main.two_menu())
@@ -67,5 +71,3 @@ else:
 	else:
 		print(main.two_menu())
 		crypt.fatal("Passe Parametros Suficientes!")
-
-
