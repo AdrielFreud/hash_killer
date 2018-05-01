@@ -8,7 +8,7 @@
 
 import os
 import sys
-sys.path.append('libs')
+sys.path.insert(1, 'libs')
 import main
 import crypt
 import identify
