@@ -15,7 +15,7 @@ menu = """
 
 menu_type = """
 Modo de Uso: hash_killer.py MD5 "hashmd5" wordlist.txt
-Para usar uma thread use: hash_killer.py thread
+Para usar uma thread use: hash_killer.py thread MD5 "hashmd5" wordlist.txt
 Caso Voce nao saiba o Tipo de sua Hash use: hash_killer.py identificar ou --identificar
 
 [ 1 ] Morse  \t   - \t Hand Double

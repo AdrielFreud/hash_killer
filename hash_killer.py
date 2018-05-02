@@ -14,6 +14,7 @@ import crypt
 import identify
 import requests
 import time, datetime
+import threading
 
 ts = time.time()
 dt = datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d-%H-%M-%S')
@@ -46,22 +47,27 @@ else:
 	_hash = sys.argv[2]
 
 	if _hash:
-		if 'base64' in type_hash:
+		if 'base64' in type_hash.lower():
 			print(main.stack_menu()+'\n%s[==>] Trying to break HASH!\nWaiting...\n'%t)
 			crypt.base64decode(_hash)
 			
-		elif 'binary' in type_hash:
+		elif 'binary' in type_hash.lower():
 			print(main.stack_menu()+'\n%s[==>] Trying to break HASH!\nWaiting...\n'%t)
 			crypt.binary(_hash)
 
-		elif 'hex' in type_hash:
+		elif 'hex' in type_hash.lower():
 			print(main.stack_menu()+'\n%s[==>] Trying to break HASH!\nWaiting...\n'%t)
 			crypt.hex(_hash)
 
-		elif 'morse' in type_hash:
+		elif 'morse' in type_hash.lower():
 			print(main.stack_menu()+'\n%s[==>] Trying to break HASH!\nWaiting...\n'%t)
 			crypt.morse(_hash)
 
+		elif 'thread' in type_hash.lower():
+			t = threading.Thread(target=hash_killer,args=(sys.argv[3], sys.argv[2], sys.argv[4],))
+			t.start()
+			while not t.isAlive():
+				hash_killer().join()
 		else:
 			if sys.argv[3]:
 				wordlist = sys.argv[3]
