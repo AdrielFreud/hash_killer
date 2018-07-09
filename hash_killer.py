@@ -67,7 +67,7 @@ else:
 			t = threading.Thread(target=hash_killer,args=(sys.argv[3], sys.argv[2], sys.argv[4],))
 			t.start()
 			while not t.isAlive():
-				hash_killer().join()
+				t.join()
 		else:
 			if sys.argv[3]:
 				wordlist = sys.argv[3]
