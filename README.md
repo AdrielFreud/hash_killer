@@ -1,2 +1,10 @@
 # hash_killer
-Made to break offline hash, Break your hash with a quick and easy wordlist
+
+<ul>
+  <li>Break your hash of all kinds.</li>
+  <li>Mode Threading.</li>
+  <li>Use a wordlist of your gender.</li>
+  <li>compatible with all systems.</li>
+<ul>
+<br/>
+<IMG style="margin-left: 150px" src="http://test.fcen.co.in/hash.png">
