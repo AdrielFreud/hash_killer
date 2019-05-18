@@ -36,7 +36,7 @@ if len(sys.argv) < 3:
 		print(main.two_menu())
 		crypt.fatal("Passe Parametros Suficientes!")
 		
-	elif r"identificar" in sys.argv[1]:
+	elif "identificar" in sys.argv[1]:
 		identify.run()
 	else:
 		print(main.two_menu())
