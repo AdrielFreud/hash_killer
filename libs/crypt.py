@@ -80,30 +80,22 @@ def decodeMorse(message):
     return decodeMessage
 
 def base64decode(hash):
-	sleep(1)
 	real_hash = hash.strip()
 	hash_decrypted = base64.b64decode(real_hash)
 	print("%s[=>] Text: -> %s"%(t, hash_decrypted))
 	print("%s[=>] Real Hash -> %s\n"%(t, hash))
-	sys.exit(0)
 
 def binary(hash):
-	sleep(1)
 	print("%s[=>] Text: -> %s"%(t, decode_binary_string(hash)))
 	print("%s[=>] Real Hash -> %s\n"%(t, hash))
-	sys.exit(0)
 
 def hex(hash):
-	sleep(1)
 	print("%s[=>] Text: -> %s"%(t, hash.decode('hex')))
 	print("%s[=>] Real Hash -> %s\n"%(t, hash))
-	sys.exit(0)
 
 def morse(hash):
-	sleep(1)
 	print("%s[=>] Text: -> %s"%(t, decodeMorse(hash)))
 	print("%s[=>] Real Hash -> %s\n"%(t, hash))
-	sys.exit(0)
 
 def MD5(hash, line):
 	for lines in line:
@@ -111,7 +103,6 @@ def MD5(hash, line):
 		if encrypt == hash:
 			print("%s[=>] Hash Cracked -> %s"%(t, lines))
 			print("%s[=>] Real Hash -> %s\n"%(t, encrypt))
-			sys.exit(0)
 
 	fatal("Impossivel Quebrar Hash, Tente novamente com Outra Wordlist!")
 
@@ -121,7 +112,6 @@ def SHA1(hash, line):
 		if encrypt == hash:
 			print("%s[=>] Hash Quebrada -> %s"%(t, lines))
 			print("%s[=>] Real Hash -> %s\n"%(t, encrypt))
-			sys.exit(0)
 
 	fatal("Impossivel Quebrar Hash, Tente novamente com Outra Wordlist!")
 
@@ -131,7 +121,6 @@ def SHA224(hash, line):
 		if encrypt == hash:
 			print("%s[=>] Hash Quebrada -> %s"%(t, lines))
 			print("%s[=>] Real Hash -> %s\n"%(t, encrypt))
-			sys.exit(0)
 
 	fatal("Impossivel Quebrar Hash, Tente novamente com Outra Wordlist!")
 
@@ -151,7 +140,6 @@ def SHA384(hash, line):
 		if encrypt == hash:
 			print("%s[=>] Hash Quebrada -> %s"%(t, lines))
 			print("%s[=>] Real Hash -> %s\n"%(t, encrypt))
-			sys.exit(0)
 
 	fatal("Impossivel Quebrar Hash, Tente novamente com Outra Wordlist!")
 
@@ -161,7 +149,6 @@ def SHA512(hash, line):
 		if encrypt == hash:
 			print("%s[=>] Hash Quebrada -> %s"%(t, lines))
 			print("%s[=>] Real Hash -> %s\n"%(t, encrypt))
-			sys.exit(0)
 
 	fatal("Impossivel Quebrar Hash, Tente novamente com Outra Wordlist!")
 
@@ -171,6 +158,5 @@ def RIPEMD160(hash, line):
 		if encrypt == hash:
 			print("%s[=>] Hash Quebrada -> %s"%(t, lines))
 			print("%s[=>] Real Hash -> %s\n"%(t, encrypt))
-			sys.exit(0)
 
 	fatal("Impossivel Quebrar Hash, Tente novamente com Outra Wordlist!")

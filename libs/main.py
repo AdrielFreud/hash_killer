@@ -75,5 +75,3 @@ def head(wordlist, type_hash, _hash):
 	else:
 		print(stack_menu())
 		crypt.fatal("Nenhuma das Opcoes e valida! Tente Novamente...")
-
-	sys.exit(0)
