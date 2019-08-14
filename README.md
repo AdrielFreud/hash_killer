@@ -22,8 +22,8 @@ for lines in line:
 ![photo](https://i.imgur.com/Zk9OYBL.png)
 
 ## Características
-  - Consulta CNPJ.
-  - Very Simple and Fast.
+  - Quebra de hash.
+  - Aplicação para Forense Computacional.
  
  ## Dowloand
 Baixe diretamente do github com:
