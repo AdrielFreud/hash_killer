@@ -16,7 +16,7 @@ for lines in line:
 ```
 
 ## AVISO
-- Caso você encontrar um bug [Click-aqui](https://github.com/AdrielFreud/hash_killer/issues/new) e crie um issue para eu corrijir o bug.
+- Caso você tenha uma sugestão de código [Click-aqui](https://github.com/AdrielFreud/hash_killer/issues/new) crie uma issue.
 
 ## Imagem
 ![photo](https://i.imgur.com/Zk9OYBL.png)
