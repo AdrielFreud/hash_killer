@@ -4,9 +4,9 @@
 ![](https://img.shields.io/badge/plataforma-win32--win64--linux64--linux32-blue?style=flat&logo=appveyor)
 ![](https://img.shields.io/badge/python-3.x.x-blue)
 
- - O Script tem a Dependencia de uma wordlist onde ele faz a varredura,
- - Assim fazendo a verificação de linha por linha, até encontrar a chave que casa com a outra encriptografada.
- - Modo CPU para forçar a quebra.
+ - O Script tem a dependencia de uma wordlist,
+ - Onde ele possa fazer as verificações, até encontrar a chave combinatoria.
+ - Modo CPU para agilizar a quebra.
  
  ```python
 for lines in line:
@@ -36,5 +36,3 @@ Baixe diretamente do github com:
 
 ## Requerimentos
  - Python3
-# Bibliotecas python necessarias:
-  - pip install requests
