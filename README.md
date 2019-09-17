@@ -25,7 +25,7 @@ for lines in line:
   - Quebra de hash.
   - Aplicação para Forense Computacional.
  
- ## Dowloand
+ ## Download
 Baixe diretamente do github com:
  - git clone https://github.com/AdrielFreud/hash_killer.git
  - ou https://github.com/AdrielFreud/hash_killer/archive/master.zip
